@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
 export const MainCardWeather = styled.section`
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  padding: 20px;
   padding: 1rem;
   max-width: 50vw;
+  align-self: center;
 `;
-export const CurrentWeatherWrapper = styled.section`
+export const CurrentWeatherWrapper = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const TemperatureText = styled.h1`
@@ -34,13 +38,8 @@ export const CityTextWrapper = styled.div`
 
 export const DateCaption = styled.span``;
 export const WeatherData = styled.div`
-  grid-row: 1;
-  grid-column: 1 / span 2;
-  padding: 20px;
-
   display: flex;
   gap: 0.5rem;
-  padding: 1rem 0;
 
   p:nth-child(2) {
     color: var(--tertiary-color);

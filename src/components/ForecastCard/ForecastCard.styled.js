@@ -12,10 +12,25 @@ export const ForecastWapper = styled.div`
   max-width: 180px;
   height: 180px;
   border-radius: 0.5rem;
+  padding: 1rem 2rem;
 `;
 
-export const Card = styled.div`
-  margin: 1rem;
+export const Card = styled.li`
+  margin: 0.5rem;
+`;
+
+export const DegreeText = styled.li`
+  font-size: 2rem;
+  color: var(--tertiary-color);
+`;
+
+export const PrevisionList = styled.ul`
   grid-row: 2;
   grid-column: 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  list-style: none;
+  padding: 0;
 `;

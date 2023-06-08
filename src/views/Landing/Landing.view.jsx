@@ -4,20 +4,21 @@ import { UseAsyncInformation } from '../../hooks/useAsyncInfo.hook';
 import { MainCard } from '../../components/MainCard/MainCard';
 import { LandingGrid } from './Landing.styled';
 import { ForecastCard } from '../../components/ForecastCard/ForecastCard';
+import { AsideContent } from '../../components/AsideContent/AsideContent';
 
 function App() {
   const { getWeatherData, getLocation } = UseAsyncInformation();
   const { data } = useContext(WeatherContext);
 
   useEffect(() => {
-    //   getWeatherData();
-    //  getLocation();
+    getWeatherData();
+    getLocation();
   }, []);
 
   return (
     <LandingGrid>
       <MainCard />
-      <MainCard />
+      <AsideContent />
       <ForecastCard />
     </LandingGrid>
   );
