@@ -4,20 +4,13 @@ import { BsStar, BsBrightnessHigh, BsStarFill } from 'react-icons/bs';
 import WeatherContext from '../../context/Weather.context';
 
 export const CityCard = (props) => {
-  const { setCurrentLocation, setInputText, favouriteList, setLocations } = useContext(WeatherContext);
+  const { favouriteList } = useContext(WeatherContext);
   const sameIndex = favouriteList.some((option) => option.id === props.id);
   const Star = sameIndex ? BsStarFill : BsStar;
 
-  const handleOnClick = () => {
-    setCurrentLocation({
-      latitude: props.latitude,
-      longitude: props.longitude,
-    });
-    setInputText('');
-  };
   return (
     <CardWrapper>
-      <DataWrapper onClick={handleOnClick} role="button">
+      <DataWrapper onClick={props.handleOnClick} role="button">
         <BsBrightnessHigh size="30px" />
         <div>
           <p>{props.name}</p>

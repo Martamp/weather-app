@@ -1,8 +1,6 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import WeatherContext from '../../context/Weather.context';
-import { ForecastCard } from '../ForecastCard/ForecastCard';
-import { MainCardWeather, TemperatureText, CityText, DateCaption, WeatherData, LocationIcon, CityTextWrapper, CityTextCaption, CurrentWeatherWrapper } from './MainCard.styled';
-import SunIcon from '../../assets/sun.svg';
+import { MainCardWeather, TemperatureText, CityText, DateCaption, WeatherData, CityTextWrapper, CityTextCaption, CurrentWeatherWrapper } from './MainCard.styled';
 import { weatherIcon, countryName } from '../../utils/Weather.utils';
 
 export const MainCard = () => {

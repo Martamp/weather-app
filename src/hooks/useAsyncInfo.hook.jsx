@@ -3,14 +3,14 @@ import WeatherContext from '../context/Weather.context';
 import useLocation from './useLocation.hook';
 
 export const UseAsyncInformation = () => {
-  const { setData, setError, setLoading, setLocations, setForecastData } = useContext(WeatherContext);
+  const { setData, setError, setLoading, setLocations, setForecastData, inputText } = useContext(WeatherContext);
   const currentLocation = useLocation();
 
   const WEATHER_API_KEY = 'ccdffdcbaa8e75e4455c1602c0a7c652';
   const LOCATION_KEY = '7a90604a23mshd28bc342c809f3dp1a2186jsn30bb3a6a4335';
   const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLocation?.latitude}&lon=${currentLocation?.longitude}&units=metric&appid=${WEATHER_API_KEY} `;
   const FORECAST_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${currentLocation?.latitude}&lon=${currentLocation?.longitude}&appid=${WEATHER_API_KEY}`;
-  const LOCATION_URL = ` https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions`;
+  const LOCATION_URL = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=10000&namePrefix=${inputText}`;
   const locationOptions = {
     method: 'GET',
     headers: {
