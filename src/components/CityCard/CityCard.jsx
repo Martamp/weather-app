@@ -13,7 +13,7 @@ export const CityCard = (props) => {
       latitude: props.latitude,
       longitude: props.longitude,
     });
-    setInputText(null);
+    setInputText('');
   };
   return (
     <CardWrapper>
