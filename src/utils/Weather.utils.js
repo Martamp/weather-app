@@ -25,3 +25,9 @@ export const countryName = (countryCode) => countries[countryCode].name;
 export const getDateWithoutHour = (date) => date.split(' ')[0];
 
 export const farenheitToCelcius = (temp) => Math.floor(temp - 273.15);
+
+export const shouldShowCityCard = (text) => text?.trim() !== '';
+
+export const filteredCitiesList = (cities, text) => (cities ? cities?.filter((city) => city.name?.toLowerCase().includes(text?.toLowerCase())) : cities);
+
+export const hasSameIndex = (favList, id) => favList.some((option) => option.id === id);

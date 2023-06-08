@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 import { CardWrapper, DataWrapper } from './CityCard.styled';
 import { BsStar, BsBrightnessHigh, BsStarFill } from 'react-icons/bs';
 import WeatherContext from '../../context/Weather.context';
+import { hasSameIndex } from '../../utils/Weather.utils';
 
 export const CityCard = (props) => {
   const { favouriteList } = useContext(WeatherContext);
-  const sameIndex = favouriteList.some((option) => option.id === props.id);
-  const Star = sameIndex ? BsStarFill : BsStar;
+
+  const Star = hasSameIndex(favouriteList, props.id) ? BsStarFill : BsStar;
 
   return (
     <CardWrapper>
