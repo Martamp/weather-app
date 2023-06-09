@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MEDIA_QUERIES } from '../../constants/mediaQuery';
 
 export const ForecastWapper = styled.div`
   display: flex;
@@ -25,12 +26,16 @@ export const DegreeText = styled.li`
 `;
 
 export const PrevisionList = styled.ul`
-  grid-row: 2;
-  grid-column: 1 / span 2;
+  grid-area: footer;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4rem;
   list-style: none;
   padding: 0;
+
+  ${MEDIA_QUERIES.onlyMobile} {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 `;

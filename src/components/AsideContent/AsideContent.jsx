@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { AsideWrapper, InputSearcher, SearchIcon, FavouritesList, FavouritesDegree, FavouriteCard, DataWrapper } from './AsideContent.styled';
+import { AsideWrapper, InputSearcher, SearchIcon, FavouritesList, CityCardWrapper, FavouriteCard, DataWrapper, IconWrapper, IconSubtitle } from './AsideContent.styled';
 import WeatherContext from '../../context/Weather.context';
 import { CityCard } from '../CityCard/CityCard';
 import { BsStarFill } from 'react-icons/bs';
@@ -11,6 +11,7 @@ export const AsideContent = () => {
   const { setInputText, inputText, locationsList, showInput, favouriteList, onShowInput, handleFavourite, handleLocation } = useContext(WeatherContext);
 
   useEffect(() => {
+    //start the call after the user has writter at least 3 chars
     inputText?.length > 3 && getLocation();
   }, [inputText]);
 
@@ -21,10 +22,13 @@ export const AsideContent = () => {
 
   return (
     <AsideWrapper>
+      <IconWrapper>
+        <SearchIcon size="40px" onClick={onShowInput} className="search-icon" />
+        <IconSubtitle>Click the icon to search by city</IconSubtitle>
+      </IconWrapper>
       {showInput && <InputSearcher type="text" placeholder="Busca una ciudad" id="search-text" value={inputText} onChange={onInputChange} />}
-      <SearchIcon size="40px" onClick={onShowInput} className="search-icon" />
-      {showCityCard && filteredCities?.map((item) => <CityCard {...item} handleFavourite={() => handleFavourite(item)} handleOnClick={() => handleLocation(item)} />)}
-      {(filteredCities?.length === 0 || !showCityCard) && (
+      <CityCardWrapper>{showInput && showCityCard && filteredCities?.map((item) => <CityCard {...item} handleFavourite={() => handleFavourite(item)} handleOnClick={() => handleLocation(item)} />)}</CityCardWrapper>
+      {(filteredCities?.length === 0 || !showCityCard || !showInput) && (
         <FavouritesList>
           {favouriteList?.map((item) => (
             <FavouriteCard>

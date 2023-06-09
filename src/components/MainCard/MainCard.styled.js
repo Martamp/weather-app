@@ -1,18 +1,26 @@
 import styled from 'styled-components';
+import { MEDIA_QUERIES } from '../../constants/mediaQuery';
 
 export const MainCardWeather = styled.section`
-  grid-row: 1;
-  grid-column: 1 / span 2;
+  grid-area: left;
   padding: 20px;
   padding: 1rem;
   max-width: 50vw;
   align-self: center;
+
+  ${MEDIA_QUERIES.onlyMobile} {
+    max-width: 100vw;
+  }
 `;
 export const CurrentWeatherWrapper = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
   justify-content: space-around;
+
+  ${MEDIA_QUERIES.onlyMobile} {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const TemperatureText = styled.h1`
@@ -34,6 +42,10 @@ export const CityTextWrapper = styled.div`
   display: flex;
   gap: 0.5rem;
   align-items: baseline;
+  ${MEDIA_QUERIES.onlyMobile} {
+    flex-direction: column;
+    padding-bottom: 0.8rem;
+  }
 `;
 
 export const DateCaption = styled.span``;

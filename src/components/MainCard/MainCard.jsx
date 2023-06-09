@@ -1,13 +1,10 @@
 import React, { useContext } from 'react';
 import WeatherContext from '../../context/Weather.context';
-import { MainCardWeather, TemperatureText, CityText, DateCaption, WeatherData, CityTextWrapper, CityTextCaption, CurrentWeatherWrapper } from './MainCard.styled';
+import { MainCardWeather, TemperatureText, CityText, WeatherData, LoadingWrapper, LoadingIcon, CityTextWrapper, CityTextCaption, CurrentWeatherWrapper } from './MainCard.styled';
 import { weatherIcon, countryName } from '../../utils/Weather.utils';
 
 export const MainCard = () => {
-  const { data, loading } = useContext(WeatherContext);
-  if (loading || data === null) {
-    return 'loading';
-  }
+  const { data } = useContext(WeatherContext);
 
   const { main, name, weather, sys } = data;
 
