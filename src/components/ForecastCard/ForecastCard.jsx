@@ -4,9 +4,13 @@ import { weatherIcon, getDateWithoutHour, farenheitToCelcius } from '../../utils
 import { ForecastWapper, Card, PrevisionList, DegreeText } from './ForecastCard.styled';
 
 export const ForecastCard = () => {
-  const dateList = [];
-
   const { forecastData } = useContext(WeatherContext);
+  const dateList = [];
+  const getIcon = (item) => {
+    const WeatherIcon = weatherIcon(item.weather[0].main);
+    return <WeatherIcon size="90px" />;
+  };
+
   if (forecastData) {
     for (let i = 0; i < forecastData.list?.length; i++) {
       if (i > 0) {
@@ -20,19 +24,15 @@ export const ForecastCard = () => {
       }
     }
   }
-  const getIcon = (item) => {
-    const WeatherIcon = weatherIcon(item.weather[0].main);
-    return <WeatherIcon size="90px" />;
-  };
 
   return (
-    <PrevisionList>
+    <PrevisionList data-testid="forecastId">
       {dateList.map((item, i) => (
-        <Card key={i}>
+        <Card key={i} data-testid="forecastCardId">
           <ForecastWapper>
-            <DegreeText>{farenheitToCelcius(item.main.temp)}°</DegreeText>
+            <DegreeText data-testid="forecastDataId">{farenheitToCelcius(item.main.temp)}°</DegreeText>
             {getIcon(item)}
-            <p>{getDateWithoutHour(item.dt_txt)}</p>
+            <p data-testid="forecastHourId">{getDateWithoutHour(item.dt_txt)}</p>
           </ForecastWapper>
         </Card>
       ))}

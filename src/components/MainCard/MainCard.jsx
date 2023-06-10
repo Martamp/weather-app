@@ -10,16 +10,16 @@ export const MainCard = () => {
 
   const WeatherIcon = weatherIcon(weather[0].main);
   return (
-    <MainCardWeather>
+    <MainCardWeather data-testid="mainDataId">
       <CurrentWeatherWrapper>
         <div>
           <TemperatureText>{main.temp}°</TemperatureText>
           <CityTextWrapper>
-            <CityText>{name}</CityText>
-            <CityTextCaption>{countryName(sys.country)}</CityTextCaption>
+            <CityText data-testid="nameId">{name}</CityText>
+            <CityTextCaption data-testid="countryId">{countryName(sys.country)}</CityTextCaption>
           </CityTextWrapper>
           <p>Today</p>
-          <WeatherData>
+          <WeatherData data-testid="maxMinDataId">
             <p>{main.temp_min}°</p>
             <p>{main.temp_max}°</p>
             <p>Humidity: {main.humidity}</p>
