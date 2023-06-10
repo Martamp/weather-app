@@ -1,17 +1,17 @@
 import React, { useContext, useEffect } from 'react';
-import { AsideWrapper, InputSearcher, SearchIcon, FavouritesList, CityCardWrapper, FavouriteCard, DataWrapper, IconWrapper, IconSubtitle } from './AsideContent.styled';
+import { BsStarFill } from 'react-icons/bs';
 import WeatherContext from '../../context/Weather.context';
 import { CityCard } from '../CityCard/CityCard';
-import { BsStarFill } from 'react-icons/bs';
 import { UseAsyncInformation } from '../../hooks/useAsyncInfo.hook';
 import { filteredCitiesList, shouldShowCityCard } from '../../utils/Weather.utils';
+import { AsideWrapper, InputSearcher, SearchIcon, FavouritesList, CityCardWrapper, FavouriteCard, DataWrapper, IconWrapper, IconSubtitle } from './AsideContent.styled';
 
 export const AsideContent = () => {
   const { getLocation } = UseAsyncInformation();
   const { setInputText, inputText, locationsList, showInput, favouriteList, onShowInput, handleFavourite, handleLocation } = useContext(WeatherContext);
 
   useEffect(() => {
-    //start the call after the user has writter at least 3 chars
+    //start the call after the user has written at least 3 chars
     inputText?.length > 3 && getLocation();
   }, [inputText]);
 

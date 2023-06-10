@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { CardWrapper, DataWrapper } from './CityCard.styled';
 import { BsStar, BsBrightnessHigh, BsStarFill } from 'react-icons/bs';
 import WeatherContext from '../../context/Weather.context';
 import { hasSameIndex } from '../../utils/Weather.utils';
+import { CardWrapper, DataWrapper } from './CityCard.styled';
 
 export const CityCard = (props) => {
   const { favouriteList } = useContext(WeatherContext);

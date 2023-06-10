@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from 'react';
+import { AiOutlineLoading } from 'react-icons/ai';
 import WeatherContext from '../../context/Weather.context';
 import { UseAsyncInformation } from '../../hooks/useAsyncInfo.hook';
 import { MainCard } from '../../components/MainCard/MainCard';
-import { LandingGrid, LoadingWrapper, LoadingIcon } from './Landing.styled';
 import { ForecastCard } from '../../components/ForecastCard/ForecastCard';
 import { AsideContent } from '../../components/AsideContent/AsideContent';
-import { AiOutlineLoading } from 'react-icons/ai';
+import { LandingGrid, LoadingWrapper, LoadingIcon } from './Landing.styled';
 
 function App() {
   const { getWeatherData } = UseAsyncInformation();

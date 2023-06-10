@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import WeatherContext from '../../context/Weather.context';
-import { MainCardWeather, TemperatureText, CityText, WeatherData, LoadingWrapper, LoadingIcon, CityTextWrapper, CityTextCaption, CurrentWeatherWrapper } from './MainCard.styled';
 import { weatherIcon, countryName } from '../../utils/Weather.utils';
+import { MainCardWeather, TemperatureText, CityText, WeatherData, CityTextWrapper, CityTextCaption, CurrentWeatherWrapper } from './MainCard.styled';
 
 export const MainCard = () => {
   const { data } = useContext(WeatherContext);

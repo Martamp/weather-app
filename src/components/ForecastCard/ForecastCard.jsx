@@ -1,7 +1,7 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import WeatherContext from '../../context/Weather.context';
-import { ForecastWapper, Card, PrevisionList, DegreeText } from './ForecastCard.styled';
 import { weatherIcon, getDateWithoutHour, farenheitToCelcius } from '../../utils/Weather.utils';
+import { ForecastWapper, Card, PrevisionList, DegreeText } from './ForecastCard.styled';
 
 export const ForecastCard = () => {
   const dateList = [];
