@@ -20,7 +20,7 @@ export const Card = styled.li`
   margin: 0.5rem;
 `;
 
-export const DegreeText = styled.li`
+export const DegreeText = styled.p`
   font-size: 2rem;
   color: var(--tertiary-color);
 `;

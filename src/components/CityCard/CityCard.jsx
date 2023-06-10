@@ -10,7 +10,7 @@ export const CityCard = (props) => {
   const Star = hasSameIndex(favouriteList, props.id) ? BsStarFill : BsStar;
 
   return (
-    <CardWrapper>
+    <CardWrapper data-testid="cardId">
       <DataWrapper onClick={props.handleOnClick} role="button">
         <BsBrightnessHigh size="30px" />
         <div>

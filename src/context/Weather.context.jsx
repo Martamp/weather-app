@@ -9,7 +9,7 @@ export const WeatherProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [currentLocation, setCurrentLocation] = useState(null);
   const [locationsList, setLocations] = useState(null);
-  const [inputText, setInputText] = useState(null);
+  const [inputText, setInputText] = useState('');
   const [forecastData, setForecastData] = useState(null);
   const [showInput, setShowInput] = useState(false);
   const [favouriteList, setFavouriteList] = useState([]);
