@@ -32,6 +32,7 @@ export const PrevisionList = styled.ul`
   align-items: center;
   gap: 4rem;
   list-style: none;
+  flex-wrap: wrap;
   padding: 0;
 
   ${MEDIA_QUERIES.onlyMobile} {

@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# La APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto creado con React y JS para consultar el tiempo de forma global. Se recoge la ubicacion del usuario en primera instancia, pero es posible consultar y buscar el clima de otras ciudades e incluso guardar en favoritos las ciudades que el usuario quiera tener a mano.
 
-## Available Scripts
+## Scripts disponibles
 
-In the project directory, you can run:
+Para comenzar con el proyecto:
+
+### `npm install`
+
+Este proyecto cuenta con varias dependencias, listadas mas adelante, para tenerlo disponible ejecuta el comando `npm install`, antes de iniciarla.\
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para arrancar la App ejecuta `npm start`, se abrira inmediatamente en el puerto deseado.\
+Abre [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Si quieres hacer cambios en el codigo, recarga el navegador. Podras ver las peticiones realizadas en la pestaña de Network. .\
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para ejecutar los tests lanza `npm test`, recorrera todos los test disponibles en tu terminal.\
 
-### `npm run build`
+## Cómo funciona la APP
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Una vez levantado el royecto, el navegador solicitará tu ubicación para iniciar con los datos actualizados de la posición del usuario. Podrás ver el lugar donde se encuentra, el tiempo actual, la humedadad actual, las temperaturas minimas y máximas y la previsión para los próximos días. .\
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Buscar por ciudad
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para buscar otras ubicaciones, haz click en el icono del buscador, se desplegará la barra de búsqueda. Debido a la gratuidad de la API consultada, es conveniente escribir lentamente para no sobrepasar las peticiones por minuto disponibles. Las ciudades o paises que concuerden con los datos escritos irán apareciendo debajo del buscador, si no aparece ninguna es posible que o bien se estén superando las peticiones por segundo o bien no coincida con ninguna ciudad. Para volver a ocultar la barra de busqueda, haz click en el icono de la lupa. .\
 
-### `npm run eject`
+### Añade a favoritos tus ciudades
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para consultar el tiempo de una de las ciudades listadas, haz click en la tarjeta, si solo quieres añadirla en favoritos, haz click en el icono de la estrella. Una vez limpies los campos de búsqueda o selecciones una ciudad, los datos se recargarán en la pagina y podrás ver la sección de favoritos ahora desplegada. El máximo de favoritos es de 3 ciudades, si se desea eliminar un favorito, puede volver a clickar el icono de la estrella para que desaparezca del listado .\
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Tu APP
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Tu APP está dispoible tanto para Desktop como en version mobile .\
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Dependencias y tecnologías usadas :hammer_and_wrench:
 
-## Learn More
+### Herramientas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Javascript** - Lenguaje de programación.
+2. **React** - Framework para el desarollo de la interfaz.
+3. **Styled components** - Para añadir estilos.
+4. **React testing library - User event** - Para crear los tests.
+5. **React icons** - Para obtener los iconos del clima.
+6. **Countries list** - Para obtener los paises consultados.
+7. **Git** - Para el control de versiones.
+8. **Github** - Como repositorio remoto.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### APIs
 
-### Code Splitting
+1. **Open Weather Map - Previsión 5 días** - [https://openweathermap.org/forecast5](https://openweathermap.org/forecast5)
+2. **Open Weather Map - Tiempo actual** - [https://openweathermap.org/current](https://openweathermap.org/current)
+3. **GeoDB Cities - Listado de ciudades** - [https://rapidapi.com/wirefreethought/api/geodb-cities/](https://rapidapi.com/wirefreethought/api/geodb-cities/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Información del proyecto
 
-### Analyzing the Bundle Size
+Uso de Hooks para manejar los estados internos .\
+Uso de contexto para facilitar el manejo de ls datos a través de la APP .\
+Carpeta utils para almacenar las funcionalidades reutilizables .\
+Carpeta components para almacenar aquellos componentes que no sean vistas y componetizar la APP .\
+Carpeta Views: disponible para incluir mas vistas en un futuro .\
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Otros datos de interés
 
-### Making a Progressive Web App
+Las API Keys quedan expuestas en este repositorio para que se pueda probar en local, en caso de querer ocultarlas en un futuro se manejaría de esta forma: .\
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Crearíamos un archivo en la terminal de configuración: .\
 
-### Advanced Configuration
+`myweatherFile config.js`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Guardaríamos las API Keys en un objeto dentro del archivo:.\
 
-### Deployment
+```javascript
+const config = {
+  MY_KEY: '123456',
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Sustituye las keys por tu nuevo objeto: .\
 
-### `npm run build` fails to minify
+`const mykey = config.MY_KEY;`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Quedaría algo asi: .\
+
+`url: 'https://www.myapi.com/?query&sig=' + mykey`
+
+Crea un archivo .gitignore para tu archivo de configuración: .\
+
+`url: 'myweatherFile .gitignore`
+
+En el archivo `.gitignore` añade los archivos que no quieras que se pusheen, en este caso el `config.js`, una vez añadas los cambios el archivo no debría aparecer entre los cambios subidos al repo .\
