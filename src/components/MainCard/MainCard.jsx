@@ -13,19 +13,19 @@ export const MainCard = () => {
     <MainCardWeather data-testid="mainDataId">
       <CurrentWeatherWrapper>
         <div>
-          <TemperatureText>{main.temp}°</TemperatureText>
+          <TemperatureText aria-label="Current temperature">{main.temp}°</TemperatureText>
           <CityTextWrapper>
             <CityText data-testid="nameId">{name}</CityText>
             <CityTextCaption data-testid="countryId">{countryName(sys.country)}</CityTextCaption>
           </CityTextWrapper>
           <p>Today</p>
           <WeatherData data-testid="maxMinDataId">
-            <p>{main.temp_min}°</p>
-            <p>{main.temp_max}°</p>
+            <p aria-label="Minimum temperature">{main.temp_min}°</p>
+            <p aria-label="Maximum temperature">{main.temp_max}°</p>
             <p>Humidity: {main.humidity}</p>
           </WeatherData>
         </div>
-        <WeatherIcon size="90px" />
+        <WeatherIcon size="90px" alt={`${weather[0].main} icon`} />
       </CurrentWeatherWrapper>
     </MainCardWeather>
   );

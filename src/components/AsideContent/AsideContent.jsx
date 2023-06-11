@@ -36,7 +36,7 @@ export const AsideContent = () => {
                 <p>{item.name}</p>
                 <p>{item.country}</p>
               </DataWrapper>
-              <BsStarFill data-testid="favIconId" size="20px" onClick={() => handleFavourite(item)} />
+              <BsStarFill data-testid="favIconId" size="20px" onClick={() => handleFavourite(item)} aria-label={`Click to delete ${item.name} from favourites`} />
             </FavouriteCard>
           ))}
         </FavouritesList>

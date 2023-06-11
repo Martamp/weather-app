@@ -8,8 +8,9 @@ export const ForecastCard = () => {
   const dateList = [];
   const getIcon = (item) => {
     const WeatherIcon = weatherIcon(item.weather[0].main);
-    return <WeatherIcon size="90px" />;
+    return <WeatherIcon size="90px" alt={`${item.weather[0].main} icon`} />;
   };
+  const date = (item) => getDateWithoutHour(item.dt_txt);
 
   if (forecastData) {
     for (let i = 0; i < forecastData.list?.length; i++) {
@@ -30,9 +31,11 @@ export const ForecastCard = () => {
       {dateList.map((item, i) => (
         <Card key={i} data-testid="forecastCardId">
           <ForecastWapper>
-            <DegreeText data-testid="forecastDataId">{kelvinToCelcius(item.main.temp)}°</DegreeText>
+            <DegreeText data-testid="forecastDataId" aria-label={`${date(item)} temperature`}>
+              {kelvinToCelcius(item.main.temp)}°
+            </DegreeText>
             {getIcon(item)}
-            <p data-testid="forecastHourId">{getDateWithoutHour(item.dt_txt)}</p>
+            <p data-testid="forecastHourId">{date(item)}</p>
           </ForecastWapper>
         </Card>
       ))}

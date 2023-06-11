@@ -8,17 +8,17 @@ export const CityCard = (props) => {
   const { favouriteList } = useContext(WeatherContext);
 
   const Star = hasSameIndex(favouriteList, props.id) ? BsStarFill : BsStar;
-
+  const ariaData = hasSameIndex(favouriteList, props.id) ? 'delete' : 'add';
   return (
     <CardWrapper data-testid="cardId">
-      <DataWrapper onClick={props.handleOnClick} role="button">
+      <DataWrapper onClick={props.handleOnClick} role="button" aria-label={`Click to check the current weather of ${props.name}`}>
         <BsBrightnessHigh size="30px" />
         <div>
           <p>{props.name}</p>
           <p>{props.country}</p>
         </div>
       </DataWrapper>
-      <Star size="20px" onClick={() => props.handleFavourite(props)} />
+      <Star size="20px" onClick={() => props.handleFavourite(props)} aria-label={`Click to ${ariaData} ${props.name} from favourites`} />
     </CardWrapper>
   );
 };
