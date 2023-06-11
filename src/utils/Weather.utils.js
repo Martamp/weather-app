@@ -24,7 +24,7 @@ export const countryName = (countryCode) => countries[countryCode].name;
 
 export const getDateWithoutHour = (date) => date.split(' ')[0];
 
-export const farenheitToCelcius = (temp) => Math.floor(temp - 273.15);
+export const kelvinToCelcius = (temp) => Math.floor(temp - 273.15);
 
 export const shouldShowCityCard = (text) => text?.trim() !== '';
 

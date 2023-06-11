@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import WeatherContext from '../../context/Weather.context';
-import { weatherIcon, getDateWithoutHour, farenheitToCelcius } from '../../utils/Weather.utils';
+import { weatherIcon, getDateWithoutHour, kelvinToCelcius } from '../../utils/Weather.utils';
 import { ForecastWapper, Card, PrevisionList, DegreeText } from './ForecastCard.styled';
 
 export const ForecastCard = () => {
@@ -30,7 +30,7 @@ export const ForecastCard = () => {
       {dateList.map((item, i) => (
         <Card key={i} data-testid="forecastCardId">
           <ForecastWapper>
-            <DegreeText data-testid="forecastDataId">{farenheitToCelcius(item.main.temp)}°</DegreeText>
+            <DegreeText data-testid="forecastDataId">{kelvinToCelcius(item.main.temp)}°</DegreeText>
             {getIcon(item)}
             <p data-testid="forecastHourId">{getDateWithoutHour(item.dt_txt)}</p>
           </ForecastWapper>

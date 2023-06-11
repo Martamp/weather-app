@@ -7,7 +7,7 @@ import { ForecastCard } from '../../components/ForecastCard/ForecastCard';
 import { AsideContent } from '../../components/AsideContent/AsideContent';
 import { LandingGrid, LoadingWrapper, LoadingIcon } from './Landing.styled';
 
-function App() {
+function Landing() {
   const { getWeatherData } = UseAsyncInformation();
   const { data, loading } = useContext(WeatherContext);
 
@@ -17,7 +17,7 @@ function App() {
 
   if (loading || data === null) {
     return (
-      <LoadingWrapper>
+      <LoadingWrapper data-testid="loadingId">
         <LoadingIcon>
           <AiOutlineLoading size="80px" />
         </LoadingIcon>
@@ -34,4 +34,4 @@ function App() {
   );
 }
 
-export default App;
+export default Landing;

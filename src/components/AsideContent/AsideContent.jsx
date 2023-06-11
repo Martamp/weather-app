@@ -21,7 +21,7 @@ export const AsideContent = () => {
   const filteredCities = filteredCitiesList(locationsList, inputText);
 
   return (
-    <AsideWrapper>
+    <AsideWrapper data-testid="asideContentId">
       <IconWrapper>
         <SearchIcon data-testid="searchIconId" size="40px" onClick={onShowInput} className="search-icon" />
         <IconSubtitle>Click the icon to search by city</IconSubtitle>
